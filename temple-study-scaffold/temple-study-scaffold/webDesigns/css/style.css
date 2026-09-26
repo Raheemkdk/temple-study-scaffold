@@ -312,6 +312,188 @@ nav {
   opacity: 0.9;
 }
 
+/* =========================
+   MY COURSES
+========================= */
+
+.courses-section {
+  width: 100%;
+}
+
+
+.courses-section > h2 {
+  margin-bottom: 20px;
+
+  font-size: 26px;
+  font-weight: 700;
+
+  color: #172033;
+}
+
+
+/* COURSE CARDS CONTAINER */
+
+.courses-container {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 24px;
+}
+
+
+/* INDIVIDUAL COURSE CARD */
+
+.course-card {
+  overflow: hidden;
+
+  background: white;
+
+  border: 1px solid #eeeeee;
+  border-radius: 20px;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+
+  transition: transform 0.2s ease,
+              box-shadow 0.2s ease,
+              border 0.2s ease;
+
+  cursor: pointer;
+}
+
+
+.course-card:hover {
+  transform: translateY(-4px);
+    border: 3px solid #087cf0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ACTIVE / SELECTED COURSE */
+
+
+
+/* TOP IMAGE AREA */
+
+.course-image {
+  height: 165px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.course-image.purple {
+  background: #eadcff;
+}
+
+
+.course-image.orange {
+  background: #ffe8c9;
+}
+
+
+.course-image.pink {
+  background: #ffdada;
+}
+
+
+/* TEMPORARY COURSE ICONS */
+
+.course-icon {
+  font-size: 85px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* COURSE INFORMATION */
+
+.course-info {
+  padding: 20px;
+}
+
+
+.course-info h3 {
+  margin-bottom: 5px;
+
+  color: #172033;
+
+  font-size: 17px;
+  font-weight: 700;
+}
+
+
+.course-info > p {
+  margin-bottom: 25px;
+
+  color: #8b93a7;
+
+  font-size: 13px;
+}
+
+
+/* PROGRESS SECTION */
+
+.course-progress {
+  padding: 12px;
+
+  background: #f7f9fd;
+
+  border-radius: 12px;
+}
+
+
+/* PROGRESS BAR */
+
+.progress-bar {
+  width: 100%;
+  height: 7px;
+
+  margin-bottom: 10px;
+
+  overflow: hidden;
+
+  background: #dce8f7;
+
+  border-radius: 10px;
+}
+
+
+.progress-fill {
+  width: 85%;
+  height: 100%;
+
+  background: #087cf0;
+
+  border-radius: 10px;
+}
+
+
+/* PROGRESS TEXT */
+
+.progress-details {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  color: #9ca3af;
+
+  font-size: 10px;
+}
+
+
+.progress-details strong {
+  color: #172033;
+
+  font-size: 11px;
+}
 
 /* =========================
    STAT CARDS
@@ -693,18 +875,9 @@ td {
 
 
 /* DATES WITH SCHEDULED EVENTS */
-
-.calendar-days .event-day {
-  background: #e1f1ff;
-
-  color: #d2042d;
-
-  font-weight: 600;
-}
-
-
-.calendar-days .event-day:hover {
-  background: #d3eaff;
+.calendar-days span:hover {
+    color:white;
+  background: #d2042d;
 }
 
 
@@ -908,7 +1081,22 @@ td {
   .welcome-card h1 {
     font-size: 24px;
   }
+@media (max-width: 900px) {
 
+  .courses-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .courses-container {
+    grid-template-columns: 1fr;
+  }
+
+} 
 
   .stats {
     grid-template-columns: 1fr;
