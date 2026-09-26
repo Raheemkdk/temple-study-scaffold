@@ -1,226 +1,531 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GradeFlow</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nemo</title>
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-  <aside class="sidebar">
-    <div class="logo">
-      <span>G</span>
-      <h2>GradeFlow</h2>
+    <!-- ==================== SIDEBAR ==================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <span>N</span>
+            <h2>Nemo</h2>
+        </div>
+
+        <nav>
+            <a href="#" class="nav-link active">Dashboard</a>
+            <a href="#" class="nav-link">Classes</a>
+            <a href="#" class="nav-link">Students</a>
+            <a href="#" class="nav-link">Gradebook</a>
+            <a href="#" class="nav-link">Assignments</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#" class="nav-link">Settings</a>
+            <a href="#" class="nav-link">Log out</a>
+        </div>
+
+    </aside>
+
+
+    <!-- ==================== PAGE ==================== -->
+
+    <div class="page">
+
+        <!-- TOP HEADER -->
+
+        <header class="topbar">
+
+            <div class="search-container">
+                <input type="search" placeholder="Search">
+            </div>
+
+            <div class="profile">
+
+                <div class="notification">🔔</div>
+
+                <div class="avatar">
+                    RK
+                </div>
+
+                <div class="profile-info">
+                    <strong>Raheem</strong>
+                    <p>Instructor</p>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ==================== DASHBOARD ==================== -->
+
+        <main class="dashboard-layout">
+
+
+            <!-- ==================== CENTER ==================== -->
+
+            <section class="dashboard-main">
+
+
+                <!-- WELCOME -->
+
+                <section class="welcome-card">
+
+                    <p class="date">
+                        September 26, Saturday
+                    </p>
+
+                    <h1>
+                        Welcome back, Raheem!
+                    </h1>
+
+                    <p class="welcome-message">
+                        Here's what's happening with your class.
+                    </p>
+
+                </section>
+
+
+                <!-- STATS -->
+
+                <section class="stats">
+
+                    <div class="stat-card">
+                        <p>Total Students</p>
+
+                        <h2 id="student-count">
+                            32
+                        </h2>
+
+                        <span>Active students</span>
+                    </div>
+
+
+                    <div class="stat-card">
+                        <p>Class Average</p>
+
+                        <h2 id="class-average">
+                            87%
+                        </h2>
+
+                        <span>Current semester</span>
+                    </div>
+
+
+                    <div class="stat-card">
+                        <p>Assignments</p>
+
+                        <h2>
+                            12
+                        </h2>
+
+                        <span>8 completed</span>
+                    </div>
+
+
+                    <div class="stat-card">
+                        <p>Missing Work</p>
+
+                        <h2 id="missing-work">
+                            7
+                        </h2>
+
+                        <span>Needs attention</span>
+                    </div>
+
+                </section>
+
+
+                <!-- GRADEBOOK -->
+
+                <section class="panel gradebook-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <h2>Gradebook</h2>
+                            <p>Recent student performance</p>
+                        </div>
+
+                        <button id="add-student-btn">
+                            + Add Student
+                        </button>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>Student</th>
+                                    <th>Assignments</th>
+                                    <th>Average</th>
+                                    <th>Grade</th>
+                                    <th>Status</th>
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="student-table">
+
+
+                                <!-- STUDENT 1 -->
+
+                                <tr>
+
+                                    <td>
+
+                                        <div class="student">
+
+                                            <div class="student-avatar">
+                                                AJ
+                                            </div>
+
+                                            <span>
+                                                Alex Johnson
+                                            </span>
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>10 / 12</td>
+
+                                    <td>94%</td>
+
+                                    <td>
+                                        <strong>A</strong>
+                                    </td>
+
+                                    <td>
+                                        <span class="status excellent">
+                                            Excellent
+                                        </span>
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- STUDENT 2 -->
+
+                                <tr>
+
+                                    <td>
+
+                                        <div class="student">
+
+                                            <div class="student-avatar">
+                                                JS
+                                            </div>
+
+                                            <span>
+                                                Jordan Smith
+                                            </span>
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>12 / 12</td>
+
+                                    <td>87%</td>
+
+                                    <td>
+                                        <strong>B+</strong>
+                                    </td>
+
+                                    <td>
+                                        <span class="status good">
+                                            Good
+                                        </span>
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- STUDENT 3 -->
+
+                                <tr>
+
+                                    <td>
+
+                                        <div class="student">
+
+                                            <div class="student-avatar">
+                                                TB
+                                            </div>
+
+                                            <span>
+                                                Taylor Brown
+                                            </span>
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>9 / 12</td>
+
+                                    <td>76%</td>
+
+                                    <td>
+                                        <strong>C</strong>
+                                    </td>
+
+                                    <td>
+                                        <span class="status attention">
+                                            Needs Work
+                                        </span>
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- STUDENT 4 -->
+
+                                <tr>
+
+                                    <td>
+
+                                        <div class="student">
+
+                                            <div class="student-avatar">
+                                                CD
+                                            </div>
+
+                                            <span>
+                                                Chris Davis
+                                            </span>
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>11 / 12</td>
+
+                                    <td>91%</td>
+
+                                    <td>
+                                        <strong>A-</strong>
+                                    </td>
+
+                                    <td>
+                                        <span class="status excellent">
+                                            Excellent
+                                        </span>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+
+            <!-- ==================== RIGHT SIDE ==================== -->
+
+            <aside class="dashboard-right">
+
+
+                <!-- MY SCHEDULE -->
+
+<section class="overview-section">
+
+    <h2>My Schedule</h2>
+
+    <div class="calendar-card">
+
+        <!-- CALENDAR HEADER -->
+        <div class="calendar-header">
+
+            <button class="calendar-arrow" aria-label="Previous month">
+                &#8249;
+            </button>
+
+            <h3>December</h3>
+
+            <button class="calendar-arrow" aria-label="Next month">
+                &#8250;
+            </button>
+
+        </div>
+
+
+        <!-- DAYS OF THE WEEK -->
+        <div class="calendar-weekdays">
+
+            <span>M</span>
+            <span>T</span>
+            <span>W</span>
+            <span>T</span>
+            <span>F</span>
+            <span>S</span>
+            <span>S</span>
+
+        </div>
+
+
+        <!-- CALENDAR DAYS -->
+        <div class="calendar-days">
+
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+            <span>6</span>
+            <span>7</span>
+
+            <span>8</span>
+            <span>9</span>
+            <span>10</span>
+            <span class="selected-day">11</span>
+            <span>12</span>
+            <span>13</span>
+            <span>14</span>
+
+            <span>15</span>
+            <span class="event-day">16</span>
+            <span>17</span>
+            <span>18</span>
+            <span class="event-day">19</span>
+            <span>20</span>
+            <span>21</span>
+
+            <span>22</span>
+            <span>23</span>
+            <span>24</span>
+            <span>25</span>
+            <span>26</span>
+            <span>27</span>
+            <span>28</span>
+
+            <span>29</span>
+            <span>30</span>
+            <span>31</span>
+
+        </div>
+
     </div>
 
-    <nav>
-      <a href="#" class="nav-link active">Dashboard</a>
-      <a href="#" class="nav-link">Classes</a>
-      <a href="#" class="nav-link">Students</a>
-      <a href="#" class="nav-link">Gradebook</a>
-      <a href="#" class="nav-link">Assignments</a>
-    </nav>
+</section>
 
-    <div class="sidebar-bottom">
-      <a href="#" class="nav-link">Settings</a>
-      <a href="#" class="nav-link">Log out</a>
+
+                <!-- UPCOMING ASSIGNMENTS -->
+
+                <section class="upcoming-section">
+
+                    <div class="section-title">
+
+                        <h2>
+                            Upcoming Assignments
+                        </h2>
+
+                        <a href="#">
+                            See All
+                        </a>
+
+                    </div>
+
+
+                    <div class="assignments-panel">
+
+
+                        <!-- ASSIGNMENT -->
+
+                        <div class="assignment">
+
+                            <div class="date-box">
+                                <strong>28</strong>
+                                <span>SEP</span>
+                            </div>
+
+                            <div class="assignment-info">
+                                <h3>JavaScript Quiz</h3>
+                                <p>Web Development</p>
+                            </div>
+
+                            <span class="arrow">
+                                ›
+                            </span>
+
+                        </div>
+
+
+                        <!-- ASSIGNMENT -->
+
+                        <div class="assignment">
+
+                            <div class="date-box">
+                                <strong>02</strong>
+                                <span>OCT</span>
+                            </div>
+
+                            <div class="assignment-info">
+                                <h3>DOM Project</h3>
+                                <p>Web Development</p>
+                            </div>
+
+                            <span class="arrow">
+                                ›
+                            </span>
+
+                        </div>
+
+
+                        <!-- ASSIGNMENT -->
+
+                        <div class="assignment">
+
+                            <div class="date-box">
+                                <strong>07</strong>
+                                <span>OCT</span>
+                            </div>
+
+                            <div class="assignment-info">
+                                <h3>Final Project</h3>
+                                <p>Web Development</p>
+                            </div>
+
+                            <span class="arrow">
+                                ›
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </aside>
+
+        </main>
+
     </div>
-  </aside>
 
 
-  <main class="main-content">
-
-    <header class="topbar">
-      <div>
-        <input type="search">
-        <h1>Dashboard</h1>
-        <p>Welcome back! Here's what's happening with your class.</p>
-      </div>
-
-      <div class="profile">
-        <div class="avatar">RK</div>
-
-        <div>
-          <strong>Raheem</strong>
-          <p>Instructor</p>
-        </div>
-      </div>
-    </header>
-
-
-    <section class="stats">
-
-      <div class="stat-card">
-        <p>Total Students</p>
-        <h2 id="student-count">32</h2>
-        <span>Active students</span>
-      </div>
-
-      <div class="stat-card">
-        <p>Class Average</p>
-        <h2 id="class-average">87%</h2>
-        <span>Current semester</span>
-      </div>
-
-      <div class="stat-card">
-        <p>Assignments</p>
-        <h2>12</h2>
-        <span>8 completed</span>
-      </div>
-
-      <div class="stat-card">
-        <p>Missing Work</p>
-        <h2 id="missing-work">7</h2>
-        <span>Needs attention</span>
-      </div>
-
-    </section>
-
-
-    <section class="dashboard-grid">
-
-      <div class="panel gradebook-panel">
-
-        <div class="panel-header">
-          <div>
-            <h2>Gradebook</h2>
-            <p>Recent student performance</p>
-          </div>
-
-          <button id="add-student-btn">+ Add Student</button>
-        </div>
-
-
-        <div class="table-container">
-          <table>
-
-            <thead>
-              <tr>
-                <th>Student</th>
-                <th>Assignments</th>
-                <th>Average</th>
-                <th>Grade</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-
-            <tbody id="student-table">
-
-              <tr>
-                <td>
-                  <div class="student">
-                    <div class="student-avatar">AJ</div>
-                    <span>Alex Johnson</span>
-                  </div>
-                </td>
-                <td>10 / 12</td>
-                <td>94%</td>
-                <td><strong>A</strong></td>
-                <td><span class="status excellent">Excellent</span></td>
-              </tr>
-
-              <tr>
-                <td>
-                  <div class="student">
-                    <div class="student-avatar">JS</div>
-                    <span>Jordan Smith</span>
-                  </div>
-                </td>
-                <td>12 / 12</td>
-                <td>87%</td>
-                <td><strong>B+</strong></td>
-                <td><span class="status good">Good</span></td>
-              </tr>
-
-              <tr>
-                <td>
-                  <div class="student">
-                    <div class="student-avatar">TB</div>
-                    <span>Taylor Brown</span>
-                  </div>
-                </td>
-                <td>9 / 12</td>
-                <td>76%</td>
-                <td><strong>C</strong></td>
-                <td><span class="status attention">Needs Work</span></td>
-              </tr>
-
-              <tr>
-                <td>
-                  <div class="student">
-                    <div class="student-avatar">CD</div>
-                    <span>Chris Davis</span>
-                  </div>
-                </td>
-                <td>11 / 12</td>
-                <td>91%</td>
-                <td><strong>A-</strong></td>
-                <td><span class="status excellent">Excellent</span></td>
-              </tr>
-
-            </tbody>
-
-          </table>
-        </div>
-      </div>
-
-
-      <div class="panel assignments-panel">
-
-        <div class="panel-header">
-          <div>
-            <h2>Upcoming</h2>
-            <p>Assignments</p>
-          </div>
-        </div>
-
-        <div class="assignment">
-          <div class="date-box">
-            <strong>28</strong>
-            <span>SEP</span>
-          </div>
-
-          <div>
-            <h3>JavaScript Quiz</h3>
-            <p>Web Development</p>
-          </div>
-        </div>
-
-
-        <div class="assignment">
-          <div class="date-box">
-            <strong>02</strong>
-            <span>OCT</span>
-          </div>
-
-          <div>
-            <h3>DOM Project</h3>
-            <p>Web Development</p>
-          </div>
-        </div>
-
-
-        <div class="assignment">
-          <div class="date-box">
-            <strong>07</strong>
-            <span>OCT</span>
-          </div>
-
-          <div>
-            <h3>Final Project</h3>
-            <p>Web Development</p>
-          </div>
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-  <script src="js/script.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
+
 </html>
