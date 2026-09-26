@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Temple Study — weekend project scaffold
 
 This repository is a **partial study app and team handoff**. Pilot authentication and manual Canvas calendar import are implemented; the other planned features still have route stubs and implementation notes. This project is not affiliated with Temple University.
@@ -80,7 +79,6 @@ Each owner adds relevant tests and documents configuration. Friday agree `docs/A
 ## GitHub handoff
 
 This scaffold can be committed directly. In the extracted directory: `git init`, `git add .`, `git commit -m "Add Temple Study weekend scaffold"`, then create a GitHub repository and push according to GitHub's instructions. Verify `.env.local`, personal Canvas URLs, database files, and API keys are **absent** from `git status` before committing. There is no Git remote or GitHub repo configured here.
-=======
 # Nemo.AI
 
 Refactor of the original `temple-study-scaffold` (Next.js full-stack) into a
@@ -178,4 +176,3 @@ different domains, set `COOKIE_SECURE=true` so the backend switches to
 
 These were unfinished in the original repo too (owner 4's slice) — porting
 their *stub* status was the goal here, not implementing them.
->>>>>>> master
