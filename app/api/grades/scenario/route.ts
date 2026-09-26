@@ -1,9 +1,18 @@
 
 import { calculateRequiredAverage } from '@/lib/grades/scenario';
+import { sameOrigin, sessionUserId } from '@/lib/auth/sessions';
 
 export const runtime = 'nodejs';
 
 export async function POST(request: Request) {
+  if (!sameOrigin(request)) {
+    return Response.json({ error: 'Invalid request origin' }, { status: 403 });
+  }
+
+  if (!sessionUserId(request)) {
+    return Response.json({ error: 'Sign in required' }, { status: 401 });
+  }
+
   const body = await request.json();
   const { target, earnedPoints, remainingWeight } = body;
 
