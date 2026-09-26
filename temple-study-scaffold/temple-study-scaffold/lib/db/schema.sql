@@ -1,2 +1,0 @@
--- TODO Owner 2: define users, sessions, Canvas connections, assignments, push devices, reminder jobs, study plans.
--- Use per-user foreign keys, unique Canvas UID + recurrence ID, and durable job uniqueness.

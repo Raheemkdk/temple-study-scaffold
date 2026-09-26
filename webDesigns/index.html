@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GradeFlow</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <aside class="sidebar">
+    <div class="logo">
+      <span>G</span>
+      <h2>GradeFlow</h2>
+    </div>
+
+    <nav>
+      <a href="#" class="nav-link active">Dashboard</a>
+      <a href="#" class="nav-link">Classes</a>
+      <a href="#" class="nav-link">Students</a>
+      <a href="#" class="nav-link">Gradebook</a>
+      <a href="#" class="nav-link">Assignments</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <a href="#" class="nav-link">Settings</a>
+      <a href="#" class="nav-link">Log out</a>
+    </div>
+  </aside>
+
+
+  <main class="main-content">
+
+    <header class="topbar">
+      <div>
+        <input type="search">
+        <h1>Dashboard</h1>
+        <p>Welcome back! Here's what's happening with your class.</p>
+      </div>
+
+      <div class="profile">
+        <div class="avatar">RK</div>
+
+        <div>
+          <strong>Raheem</strong>
+          <p>Instructor</p>
+        </div>
+      </div>
+    </header>
+
+
+    <section class="stats">
+
+      <div class="stat-card">
+        <p>Total Students</p>
+        <h2 id="student-count">32</h2>
+        <span>Active students</span>
+      </div>
+
+      <div class="stat-card">
+        <p>Class Average</p>
+        <h2 id="class-average">87%</h2>
+        <span>Current semester</span>
+      </div>
+
+      <div class="stat-card">
+        <p>Assignments</p>
+        <h2>12</h2>
+        <span>8 completed</span>
+      </div>
+
+      <div class="stat-card">
+        <p>Missing Work</p>
+        <h2 id="missing-work">7</h2>
+        <span>Needs attention</span>
+      </div>
+
+    </section>
+
+
+    <section class="dashboard-grid">
+
+      <div class="panel gradebook-panel">
+
+        <div class="panel-header">
+          <div>
+            <h2>Gradebook</h2>
+            <p>Recent student performance</p>
+          </div>
+
+          <button id="add-student-btn">+ Add Student</button>
+        </div>
+
+
+        <div class="table-container">
+          <table>
+
+            <thead>
+              <tr>
+                <th>Student</th>
+                <th>Assignments</th>
+                <th>Average</th>
+                <th>Grade</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+
+            <tbody id="student-table">
+
+              <tr>
+                <td>
+                  <div class="student">
+                    <div class="student-avatar">AJ</div>
+                    <span>Alex Johnson</span>
+                  </div>
+                </td>
+                <td>10 / 12</td>
+                <td>94%</td>
+                <td><strong>A</strong></td>
+                <td><span class="status excellent">Excellent</span></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="student">
+                    <div class="student-avatar">JS</div>
+                    <span>Jordan Smith</span>
+                  </div>
+                </td>
+                <td>12 / 12</td>
+                <td>87%</td>
+                <td><strong>B+</strong></td>
+                <td><span class="status good">Good</span></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="student">
+                    <div class="student-avatar">TB</div>
+                    <span>Taylor Brown</span>
+                  </div>
+                </td>
+                <td>9 / 12</td>
+                <td>76%</td>
+                <td><strong>C</strong></td>
+                <td><span class="status attention">Needs Work</span></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="student">
+                    <div class="student-avatar">CD</div>
+                    <span>Chris Davis</span>
+                  </div>
+                </td>
+                <td>11 / 12</td>
+                <td>91%</td>
+                <td><strong>A-</strong></td>
+                <td><span class="status excellent">Excellent</span></td>
+              </tr>
+
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+
+
+      <div class="panel assignments-panel">
+
+        <div class="panel-header">
+          <div>
+            <h2>Upcoming</h2>
+            <p>Assignments</p>
+          </div>
+        </div>
+
+        <div class="assignment">
+          <div class="date-box">
+            <strong>28</strong>
+            <span>SEP</span>
+          </div>
+
+          <div>
+            <h3>JavaScript Quiz</h3>
+            <p>Web Development</p>
+          </div>
+        </div>
+
+
+        <div class="assignment">
+          <div class="date-box">
+            <strong>02</strong>
+            <span>OCT</span>
+          </div>
+
+          <div>
+            <h3>DOM Project</h3>
+            <p>Web Development</p>
+          </div>
+        </div>
+
+
+        <div class="assignment">
+          <div class="date-box">
+            <strong>07</strong>
+            <span>OCT</span>
+          </div>
+
+          <div>
+            <h3>Final Project</h3>
+            <p>Web Development</p>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>
