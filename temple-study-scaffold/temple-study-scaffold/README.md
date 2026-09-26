@@ -1,6 +1,6 @@
 # Temple Study — weekend project scaffold
 
-This repository is a **file structure and team handoff**, not a finished study app. It contains a runnable Next.js landing placeholder, route stubs that return HTTP 501, configuration templates, and implementation notes. The four owners can fill their files independently and integrate one demonstrable flow by Sunday. This project is not affiliated with Temple University.
+This repository is a **partial study app and team handoff**. Pilot authentication and manual Canvas calendar import are implemented; the other planned features still have route stubs and implementation notes. This project is not affiliated with Temple University.
 
 ## Goal and weekend boundary
 
@@ -12,7 +12,7 @@ Help a student see Canvas deadlines, work out the average needed on remaining co
 
 | Path | Purpose | Owner |
 | --- | --- | --- |
-| `app/page.tsx`, `app/layout.tsx`, `app/globals.css`, `components/Dashboard.tsx` | Mobile-first, accessible student UI; currently a placeholder | 1 Frontend |
+| `app/page.tsx`, `app/layout.tsx`, `app/globals.css`, `components/Dashboard.tsx` | Student sign-in, Canvas import/refresh and event list; other dashboard features pending | 1 Frontend |
 | `app/api/auth/`, `app/api/grades/`, `lib/auth/`, `lib/grades/`, `lib/db/` | Account/session, deterministic grade scenario, SQLite schema and migrations | 2 Backend |
 | `app/api/canvas/`, `app/api/study/`, `lib/canvas/`, `lib/ai/` | iCal import, safe feed handling, one study task | 3 Canvas + AI |
 | `app/api/push/`, `app/api/reminders/`, `lib/reminders/`, `worker/`, `infra/` | Push subscription, durable reminders, Azure deployment | 4 Reminders + deployment |
@@ -39,7 +39,7 @@ The browser and server are one Next.js TypeScript app to minimize setup. A separ
 3. Run `npm run typecheck` and `npm run build` before opening a PR. CI does both.
 4. Copy `.env.example` to `.env.local` **when implementing the relevant feature**. Generate real keys privately; do not commit the file or any student's Canvas link.
 
-The scaffold has **no working login, import, grades, AI, worker, push, or SMS**. API route placeholders deliberately return 501. The dependencies for SQLite, iCal parsing, and Web Push should be added by the relevant owner with implementation and tests, rather than committing unused packages today.
+Pilot registration/login, Canvas iCal import and manual refresh, and assignment listing are implemented. Grades, AI, worker, push, and SMS routes remain placeholders. For the Canvas flow, set `PILOT_INVITE_CODE` and a random 32-byte `APP_ENCRYPTION_KEY` (64 hex characters or base64) in `.env.local`; generate a key with `node -e "console.log(require('node:crypto').randomBytes(32).toString('hex'))"`. Keep this key stable: changing it makes stored feed URLs unreadable. Run `npm test` for synthetic-feed tests.
 
 ## Product behavior to implement
 

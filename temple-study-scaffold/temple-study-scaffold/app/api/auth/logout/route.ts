@@ -1,7 +1,10 @@
-// TODO: Owner 2: revoke session.
-// Contract and privacy requirements: docs/API.md. No feature logic is implemented here.
+import { endSession, sameOrigin } from '@/lib/auth/sessions';
+
 export const runtime = 'nodejs';
 
-export async function POST() {
-  return Response.json({ error: 'Not implemented' }, { status: 501 });
+export async function POST(request: Request) {
+  if (!sameOrigin(request)) return Response.json({ error: 'Invalid request origin' }, { status: 403 });
+  const response = Response.json({ ok: true });
+  endSession(request, response);
+  return response;
 }
