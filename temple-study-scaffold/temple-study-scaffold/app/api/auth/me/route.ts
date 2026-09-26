@@ -1,7 +1,11 @@
-// TODO: Owner 2: return the authenticated student summary.
-// Contract and privacy requirements: docs/API.md. No feature logic is implemented here.
+import { sessionUserId } from '@/lib/auth/sessions';
+import { getDb } from '@/lib/db/client';
+
 export const runtime = 'nodejs';
 
-export async function GET() {
-  return Response.json({ error: 'Not implemented' }, { status: 501 });
+export async function GET(request: Request) {
+  const userId = sessionUserId(request);
+  if (!userId) return Response.json({ authenticated: false }, { status: 401 });
+  const user = getDb().prepare('SELECT id, email FROM users WHERE id = ?').get(userId);
+  return Response.json({ authenticated: true, user });
 }
