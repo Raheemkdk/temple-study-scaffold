@@ -1,13 +1,17 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, BackgroundTasks
+from pydantic import BaseModel
+from app.twilio_client import send_sms
 
 router = APIRouter(prefix="/api/reminders", tags=["reminders"])
 
-# TODO: Owner 4 (see original README): send an explicitly labeled immediate
-# test push. Contract and privacy requirements: docs/API.md. No feature logic
-# is implemented here yet. The durable 48/24-hour scheduler and worker
-# (originally lib/reminders/scheduler.ts and worker/) are also not ported.
-
+class TestReminderRequest(BaseModel):
+    phone_number: str
 
 @router.post("/test")
-def send_test_reminder():
-    raise HTTPException(status_code=501, detail="Not implemented")
+def send_test_reminder(payload: TestReminderRequest, background_tasks: BackgroundTasks):
+    try:
+        test_message = "sms_appointment_reminders"
+        background_tasks.add_task(send_sms, payload.phone_number, test_message)
+        return {"status": "success", "detail": f"Test reminder queued for {payload.phone_number}"}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))

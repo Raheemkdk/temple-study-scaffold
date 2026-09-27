@@ -16,6 +16,11 @@ class Settings(BaseSettings):
     gemini_model: str = "gemini-2.0-flash"
     gemini_max_output_tokens: int = 300
     gemini_timeout_seconds: int = 12
+    
+    # Twilio Settings
+    twilio_account_sid: str = ""
+    twilio_auth_token: str = ""
+    twilio_phone_number: str = ""
 
     @property
     def allowed_origin_list(self) -> list[str]:
